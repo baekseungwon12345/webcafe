@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webCafe</title>
+    <link rel="shortcut icon" href="images/common/webcafe.ico"> <!--타입 ico이 원래인데 요즘은 jpg png 다 되므로 안쓴다.-->
+    <link rel="stylesheet" href="css/normalize.css">  <!--원래는 이거 안써도 되는데 혹시 예전 홈페이지를 쓰는 사람들 때문에 쓰느 경우가 있다. nomalize.css는 firefox나 explore나 이런 것들이 여러가지 기능이 있는데 예를들어 explore는 border가 적용되있어서 해제하거나 이런 것들을 하나로 통일 시킨 것-->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/join.css">
+
+    <!--<style>
+        #imsi {
+            font-size: 5em;
+            font-family: "webcafeicon";
+        }
+    </style>-->
+</head>
+<body>
+    <!--<h1 id="imsi">rgzpt</h1> 도형 글꼴이라 한다 위에 style 참고--> 
+    <!--건너뛰기 링크 영역 시작 주석다는 이유는 영역을 구분해서 수정하기 용이하게 하기 위해 쓰인다.-->
+    <a id="skipNav"href="#contentsArea">본문바로가기</a>
+    <!--건너띄기 링크 종료-->
+    <!--wrapper 영역 시작-->
+    <div id="wrapper">
+        <!--헤더 영역 시작-->
+        <header id="header">
+            <h1 class="logo">
+                 <a href="index.html">
+                    <img src="images/logo.png" alt="webCafe">
+                </a>
+            </h1>
+            <ul class="infoLink">
+                <li><a href="#">홈</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">ENGLISH</a></li>
+            </ul>
+            <nav>  <!--메뉴-->
+                <h2 class="hidden">메인 메뉴</h2> <!--실제 화면상으로는 안보이게 할거다-->
+                <ul class="mainMenu">
+                    <li><a href="#">HTML에 대해</a>
+                        <ul class="aboutHTML">  <!--상위 메뉴 안에 하위 메뉴 있는 경우-->
+                            <li><a href="#">HTML5 소개</a></li>
+                            <li><a href="#">레퍼런스 소개</a></li>
+                            <li><a href="#">활용 예제</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">CSS에 대해</a>
+                        <ul class="aboutCSS">
+                            <li><a href="#">CSS 소개</a></li>
+                            <li><a href="#">CSS2 VS CSS3</a></li>
+                            <li><a href="#">CSS 애니메이션</a></li>
+                            <li><a href="#">CSS Framework</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">웹 표준</a>
+                        <ul class="webStandard">
+                            <li><a href="#">웹 표준이란</a></li>
+                            <li><a href="#">W3C</a></li>
+                            <li><a href="#">HTML5의 현재와 미래</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">웹 접근성</a>
+                        <ul class="webAcessibility">
+                            <li><a href="#">웹 접근성의 개요</a></li>
+                            <li><a href="#">장애 환경의 이해</a></li>
+                            <li><a href="#">장차법</a></li>
+                            <li><a href="#">웹 접근성 품질마크</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">묻고 답하기</a>
+                        <ul class="qna">
+                            <li><a href="#">묻고 답하기</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">1대1 질문</a></li>
+                            <li><a href="#">웹표준</a></li>
+                            <li><a href="#">웹접근성</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">자료실</a>
+                        <ul class="archive">
+                            <li><a href="#">공개 자료실</a></li>
+                            <li><a href="#">이미지 자료실</a></li>
+                            <li><a href="#">웹표준 자료실</a></li>
+                            <li><a href="#">웹접근성 자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--헤더 영역 종료-->
+        <!--비주얼 영역 시작-->
+        <div id="visual">
+            <p>Web Standard &amp; webAcessibility</p>
+        </div>
+        <!--비주얼 영역 종료-->
+        <!--콘넨츠 영역 시작-->
+        <div id="contentsArea">
+        <!--회원가입 영역 섹션-->>
+            <section id="memberArea">
+                <p class="location">Home &gt; 자료실 &gt; <strong>이미지자료</strong></p>
+                <h2>회원가입</h2>
+                <p class="formSign"><strong class="require">필수</strong>는 반드시 입력해야 하는 항목입니다.</p>
+                <form action="join.jsp" method="post" id="joinForm" name="joinForm">
+                    <fieldset>
+                        <legend>회원가입 정보 입력 폼</legend>
+                        <p>
+                            <label for="name">성명<strong class="require">필수</strong></label>
+                            <input type="text" id="name" name="name" required placeholder ="홍길동">
+                        </p>
+                        <p>
+                            <label for="id">아이디<strong class="require">필수</strong></label>
+                            <input type="text" id="id" name="id" required placeholder ="Guest">
+                            <a href="#" clas="idCheck">ID중복확인</a> <!--나중에 백엔드에 활용-->
+                        </p>
+                        <p>
+                            <label for="password">비밀번호<strong class="require">필수</strong></label>
+                            <input type="password" id="password" name="password" required placeholder ="영문/숫자 6자이상 10자이하">
+                        </p>
+                        <p>
+                            <label for="confirmPassword">비밀번호 확인<strong class="require">필수</strong></label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </p>
+                        <p>
+                            <label for="address" class="labelAddress">주소</label> <!--css에서 편집하기위해 class-->
+                            <a href="#" class="findZipcode">우편번호 찾기</a>
+                            <input type="tel" id="Zipcode" name="Zipcode" maxlength="5" size="6"> <!--타입 tel이면 숫자만 기입가능-->
+                            <input type="text" id="address" name="address" maxlength="100" size="60" placeholder="입력 예)서울시 중랑구 면목5동 174-42">
+                        </p>
+                        <p>
+                            <label for="tel">연락처</label>
+                            <input type="tel" id="tel" name="tel" maxlength="11" size="20" title="하이픈(-)은 입력할 수 없습니다." placeholder="입력 예)01012345678"> <!--title마우스 커서 갖다대면 살짝 보이는 것-->
+                        </p>
+                        <p>
+                            <label for="email">이메일<strong class="require">필수</strong></label>
+                            <input type="email" id="email" name="email" size="30" required placeholder="입력 예)ezen@gmail.com">
+                        </p>
+                        <p class="mailing">
+                            <em>메일링 리스트 가입</em>
+                            <span>메일링 리스트에 가입하시면 WebCafe의 뉴스레더를 받아보실 수 있습니다.</span>
+                            <input type="radio" id="mailingOk" name="mailing" value="Yes" checked> <!--처음에 Yes에 체크-->
+                            <label for="mailingOk">예</label>
+                            <input type="radio" id="mailingNo" name="mailing" value="Yes" > <!--checked 한 개만.-->
+                            <label for="mailingNo">아니오</label>
+                        </p>
+                        <div class="btnJoinArea">
+                            <button type="submit" class="btnOk">회원가입</button>
+                            <button type="reset" class="btnCancle">취소</button>
+                        </div>
+                        </aside>
+                    </fieldset>
+                </form> <!--액션 필 수-->
+            </section>
+            <!--트위터 영역 시작-->
+            <aside id="twitterArea" title="HTML5관련 글">
+                <h2>twitter</h2>
+                <article class="twitterArticle"> <!--상쇄-->
+                    <img src="images/seulbinim.jpg" alt="seulbinim">
+                    <a href="http://twitter.com/seulbinim" class="twitterUserName" title="seulbinim의 트위터로 연결됩니다.">seulbinim</a>
+                    <p>한국 정보화 진흥원에서 <mark>HTML5</mark>교육을 무료로 해 준답니다.  <!--mark테그를 쓰면 형광펜 효과를 볼 수 있다.-->
+                    <mark>HTML5</mark>에 관심이 있는 분들은 한국 정보화 진흥원으로 문의하시기 바랍니다.</p>
+                    <time datetime="2021-09-03" class="twitterDate">2021년 09월 03일</time>
+                </article>
+                <article class="twitterArticle">
+                    <img src="images/miheeya.jpg" alt="miheeya">
+                    <a href="http://twitter.com/miheeya" class="twitterUserName" title="miheeya의 트위터로 연결됩니다.">miheeya</a>
+                    <p><mark>HTML5</mark>를 사용한다고 해서 웹표준을 준수하지 않는다거나 웹접근성이 떨어지는 것이 아닙니다.</p>
+                    <time datetime="2021-09-02" class="twitterDate">2021년 09월 02일</time>
+                </article>
+            </aside>
+            <!--트위터 영역 종료-->
+            <!--신규 이벤트, 관련 사이트, 인기 사이트 컨텐츠 컬럼 종료-->
+        </div>
+        <!--콘넨츠 영역 종료-->
+        <!--슬로건 영역 시작-->
+        <section id="slogan"> <!--특별 영역-->
+            <h2>Web Cafe 슬로건</h2> <!--hidden 안하고 ir기법 쓸 것-->
+            <p>
+                <q cite="http://w3.org.WAI/">
+                    The power of the web is in its universality, Access by everone regardless of disability is an essential aspect.
+                </q>
+                Tim Berners - Lee. director and invertor of the World Wide Web
+            </p>  
+            <footer class="hidden">  <!--footer는 아랫부분을 의미해서 이럴때도 쓸때도있다.-->
+                출처 : World Wide Web Consortium - http://www.w3.org/WAI/
+            </footer>    
+        </section>
+        <!--슬로건 영역 종료-->
+        <!--푸터 영역 시작-->
+        <footer id="footer">
+            <div id="footerInner">
+                <a href="#" class="footerLogo">
+                    <img src="images/footer_logo.png" alt="WebCafe">
+                </a>
+                <section class="guide">
+                    <ul>
+                        <li><a href="#">회사정보</a></li>
+                        <li><a href="#">개인정보 보호정책</a></li>
+                        <li><a href="#">이메일 주소 무단 수집거부</a></li>
+                        <li><a href="#">contract us</a></li>
+                        <li><a href="#">site map</a></li>
+                    </ul>
+                </section>
+                <address>
+                    <span>서울시 마포구 성수동 123-12 한주빌딩 5층</span>
+                    <span>· 전화 : 02-234-5678</span>
+                    <span>· 이메일 : webmaster@webcafe2010.com<a href="mailto:webmaster@webcafe.com"></a></span>
+                </address>
+                <p class="copyright">Copyright since &copy; 2010 by Web Cafe CORPORATION ALL RIGHTS RESERVED.</p>
+                <div class="techLogoArea">
+                    <img src="images/html5_logo.png" alt="HTML5">
+                    <img src="images/css3_logo.png" alt="CSS3">
+                </div>
+            </div>
+        </footer>
+        <!--푸터 영역 종료-->
+    </div>
+         <!--wrapper영역 종료-->
+</body>
+</html>
